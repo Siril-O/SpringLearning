@@ -9,7 +9,7 @@ import ua.epam.edu.pizza.service.SimpleOrderService;
 
 public class JavaConfig implements Config {
 
-	private Map<String, Class<?>> map = new HashMap<>();
+	private final Map<String, Class<?>> map = new HashMap<>();
 
 	{
 		map.put("pizzaRepository", TestPizzaRepository.class);
