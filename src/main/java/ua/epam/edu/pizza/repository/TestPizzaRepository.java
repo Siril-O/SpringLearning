@@ -5,6 +5,7 @@ import java.util.List;
 
 import ua.epam.edu.pizza.domain.Pizza;
 import ua.epam.edu.pizza.domain.PizzaType;
+import ua.epam.edu.pizza.infrastructure.Benchmark;
 
 public class TestPizzaRepository implements PizzaRepository {
 
@@ -36,6 +37,7 @@ public class TestPizzaRepository implements PizzaRepository {
 		this.pizzas = pizzas;
 	}
 
+	@Override
 	public Pizza getPizzaByID(int id) {
 		for (Pizza pizza : pizzas) {
 			if (pizza.getId() == id) {

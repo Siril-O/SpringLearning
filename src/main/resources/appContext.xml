@@ -4,36 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
-	<bean name="pizzaRepository" class="ua.epam.edu.pizza.repository.TestPizzaRepository">
-		<property name="pizzas">
-			<list>
-				<bean class="ua.epam.edu.pizza.domain.Pizza"> <!-- this is the inner bean -->
-					<property name="id" value="1" />
-					<property name="name" value="Salami" />
-					<property name="price" value="100.3" />
-					<property name="type" value="Meat"></property>
-				</bean>
-				<bean class="ua.epam.edu.pizza.domain.Pizza">
-					<property name="id" value="2" />
-					<property name="name" value="Seal" />
-					<property name="price" value="200.45" />
-					<property name="type" value="Sea"></property>
-				</bean>
-				<bean class="ua.epam.edu.pizza.domain.Pizza">
-					<property name="id" value="3" />
-					<property name="name" value="Tomato" />
-					<property name="price" value="160.75" />
-					<property name="type" value="Vegetarian"></property>
-				</bean>
-			</list>
-		</property>
-	</bean>
-	<bean name="orderRepository" id="orderRepository"
-		class="ua.epam.edu.pizza.repository.TestOrderRepository"></bean>
 	<bean name="orderService" id="orderService"
-		class="ua.epam.edu.pizza.service.SimpleOrderService">
-		<constructor-arg ref="pizzaRepository" />
-		<constructor-arg ref="orderRepository" />
+		class="ua.epam.edu.pizza.service.SimpleOrderService" autowire="constructor">
+	<!--  	<constructor-arg ref="pizzaRepository" />
+		<constructor-arg ref="orderRepository" /> -->
+		<lookup-method name="getNewOrder" bean="order"/>
 	</bean>
-
+	<bean name="order" class="ua.epam.edu.pizza.domain.Order" scope="prototype" destroy-method="destroy"/>
 </beans>

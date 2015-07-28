@@ -1,12 +1,15 @@
 package ua.epam.edu.pizza.domain;
 
+import java.util.Date;
 import java.util.List;
 
 public class Order {
-
+	
+	
 	private int id;
 	private List<Pizza> pizzas;
 	private Customer customer;
+	private String name;
 
 	public Order(Customer customer, List<Pizza> pizzas) {
 		this.pizzas = pizzas;
@@ -15,6 +18,7 @@ public class Order {
 
 	public Order() {
 		super();
+		name = new Date().toLocaleString();
 	}
 
 	/**
@@ -70,7 +74,10 @@ public class Order {
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", pizzas=" + pizzas + ", customer="
-				+ customer + "]";
+				+ customer + ", name=" + name + "]";
 	}
 
+	public void destroy(){
+		System.out.println("Destroy");
+	}
 }
