@@ -12,22 +12,22 @@ import ua.epam.edu.pizza.service.OrderService;
 
 public class PizzaApp {
 
-//	public static void main(String[] args) throws Exception {
-//
-//		Customer customer = new Customer(0, "Customer 1");
-//
-//		// ObjectFactory objectFactory = ObjectFactory.getInstance();
-//
-//		// OrderService orderService = (OrderService) objectFactory
-//		// .createObject("orderService");
-//		Config config = new JavaConfig();
-//		ApplicationContext context = new JavaConfigApplicationContext(config);
-//		//PizzaRepository pizzaRepository = (PizzaRepository) context.getBean("pizzaRepository");
-//		OrderService orderService = (OrderService) context.getBean("orderService");
-//	//	System.out.println(pizzaRepository);
-//
-//		 Order order = orderService.placeNewOrder(customer, 1, 2, 3);
-//		 System.out.println(order);
-//	}
+/*	public static void main(String[] args) throws Exception {
+
+		Customer customer = new Customer(0, "Customer 1");
+
+		// ObjectFactory objectFactory = ObjectFactory.getInstance();
+
+		// OrderService orderService = (OrderService) objectFactory
+		// .createObject("orderService");
+		Config config = new JavaConfig();
+		ApplicationContext context = new JavaConfigApplicationContext(config);
+		//PizzaRepository pizzaRepository = (PizzaRepository) context.getBean("pizzaRepository");
+		OrderService orderService = (OrderService) context.getBean("orderService");
+	//	System.out.println(pizzaRepository);
+
+		 Order order = orderService.placeNewOrder(customer, 1, 2, 3);
+		 System.out.println(order);
+	}*/
 
 }

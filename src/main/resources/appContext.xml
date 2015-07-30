@@ -11,4 +11,5 @@
 		<lookup-method name="getNewOrder" bean="order"/>
 	</bean>
 	<bean name="order" class="ua.epam.edu.pizza.domain.Order" scope="prototype" destroy-method="destroy"/>
+	<bean class="ua.epam.edu.pizza.infrastructure.BenchmarkBeanPostProcessor"></bean>
 </beans>
