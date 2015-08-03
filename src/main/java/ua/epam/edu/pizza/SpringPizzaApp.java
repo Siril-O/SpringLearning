@@ -1,5 +1,7 @@
 package ua.epam.edu.pizza;
 
+import java.util.Arrays;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,7 +21,7 @@ public class SpringPizzaApp {
 				new String[] { "appContext.xml" }, repositoryContext);
 
 		OrderService orderService = (OrderService) appContext
-				.getBean("orderService");
+				.getBean(OrderService.class);
 
 		Customer customer = new Customer(0, "Customer 1");
 
@@ -28,18 +30,20 @@ public class SpringPizzaApp {
 
 		System.out.println(order);
 		System.out.println(order2);
-		System.out.println(order==order2);
-		
-//		System.out.println(appContext.getBean(Order.class));
-//		System.out.println(appContext.getBean(Order.class));
-		// String[] definitionNames = appContext.getBeanDefinitionNames();
-		//
-		// for (String name : definitionNames) {
-		// System.out.println(name);
-		// }
+		// System.out.println(order==order2);
+
+		// System.out.println(appContext.getBean(Order.class));
+		// System.out.println(appContext.getBean(Order.class));
+		String[] definitionNames = appContext.getBeanDefinitionNames();
+
+		System.out.println("Context - start");
+		for (String name : definitionNames) {
+			System.out.println(name);
+		}
+		System.out.println("Context - stop");
 
 		appContext.close();
-		repositoryContext.close();	
+		repositoryContext.close();
 	}
 
 }

@@ -3,13 +3,19 @@ package ua.epam.edu.pizza.domain;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component (value = "order")
+@Scope(value = "prototype")
 public class Order {
-	
-	
+
 	private int id;
 	private List<Pizza> pizzas;
 	private Customer customer;
 	private String name;
+//	private Map<Pizza, Integer> piz;
+	
 
 	public Order(Customer customer, List<Pizza> pizzas) {
 		this.pizzas = pizzas;
@@ -77,7 +83,7 @@ public class Order {
 				+ customer + ", name=" + name + "]";
 	}
 
-	public void destroy(){
+	public void destroy() {
 		System.out.println("Destroy");
 	}
 }
